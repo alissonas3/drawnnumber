@@ -1,5 +1,5 @@
 const menorValor = 0
-const maiorValor = 1000
+const maiorValor = 100
 
 const numeroAleatorio = gerarNumeroAleatorio()
 

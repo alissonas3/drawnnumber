@@ -1,14 +1,30 @@
 function verificaNumero(palpite) {
-    
-    const numero = +palpite
 
-    if(numeroInvalido(numero)) {
-        console.log('Valor inválido!')
+    const numero = +palpite     // Converte o valor do parametro de 'string' para um inteiro.
+
+    if (numeroInvalido(numero)) {
+        elementoMensagem.innerHTML += `<div>Valor inválido!</div>`
+        return
     }
 
-    if(numeroForaDoIntervalo(numero)) {
-        console.log(`Valor inválido! O numero precisa estar entre ${menorValor} e ${maiorValor}.`)
+    if (numeroForaDoIntervalo(numero)) {
+        elementoMensagem.innerHTML += `<div>Valor inválido! O numero precisa estar entre ${menorValor} e ${maiorValor}.</div>`
+        return
     }
+
+    if (numero < numeroAleatorio) {
+        elementoMensagem.innerHTML += `<div>O número sorteado é maior <i class="fa-solid fa-arrow-up"></i></div>`
+    } else
+        if (numero > numeroAleatorio) {
+            elementoMensagem.innerHTML += `<div>O número sorteado é menor <i class="fa-solid fa-arrow-down"></i></div>`
+        }
+        else {
+            document.body.innerHTML = `
+            <h2>Parabéns!</h2>
+            <h3>Você acertou o número secreto que era ${numeroAleatorio}!</h3>
+            <button id="jogar-novamente" class="btn-jogar">Jogar novamente</button>
+         `
+        }
 
 }
 
@@ -19,3 +35,10 @@ function numeroInvalido(numero) {
 function numeroForaDoIntervalo(numero) {
     return numero < menorValor || numero > maiorValor
 }
+
+document.body.addEventListener('click', e => {
+
+    if (e.target.id == 'jogar-novamente') {
+        window.location.reload()
+    }
+})

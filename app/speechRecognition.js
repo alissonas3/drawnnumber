@@ -23,6 +23,7 @@ function palpiteNaTela(palpite) {
   elementoMensagem.innerHTML = `
     <div>Você disse:</div>
     <span class="box">${palpite}</span>
-    <div>O número sorteado é maior <i class="fa-solid fa-arrow-up"</div>
     `
 }
+
+recognition.addEventListener('end', () => recognition.start())

@@ -4,6 +4,7 @@
     --font-family: 'Nunito Sans', sans-serif;
     --bg-color: #394867;
     --primary-color: #F1F6F9;
+    --hover-color: #000000;
 }
 
 body {
@@ -24,6 +25,10 @@ h1 {
     font-weight: 700;
 }
 
+h2{
+    font-size: 5em;
+}
+
 h3 {
     font-size: 2em;
     margin-top: 20px;
@@ -41,4 +46,18 @@ h3 {
     font-size: 4em;
     padding: 10px;
     margin: 20px;
+}
+
+.btn-jogar {
+    border: solid 2px var(--primary-color);
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    margin-top: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.btn-jogar:hover {
+    background-color: var(--hover-color)
 }
