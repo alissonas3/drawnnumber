@@ -3,7 +3,17 @@ function verificaNumero(palpite) {
     const numero = +palpite     // Converte o valor do parametro de 'string' para um inteiro.
 
     if (numeroInvalido(numero)) {
-        elementoMensagem.innerHTML += `<div>Valor inválido!</div>`
+
+        if (palpite.toUpperCase() === "FIM DE JOGO") {
+            document.body.innerHTML = `
+                <h2 class="color-game-over">GAME OVER</h2>
+                <p>Pressione o botão para jogar novamente</p>
+                <button id="jogar-novamente" class="btn-jogar">Jogar novamente</button>`
+            document.body.style.backgroundColor = "black";
+        } else {
+            elementoMensagem.innerHTML += `<div>Valor inválido!</div>`
+        }
+
         return
     }
 

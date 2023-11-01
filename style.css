@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 
 :root {
     --font-family: 'Nunito Sans', sans-serif;
+    --font-family-gameover: 'Permanent Marker', cursive;
+    --font-family-jogarnovamente: 'Kalam', cursive;
     --bg-color: #394867;
     --primary-color: #F1F6F9;
     --hover-color: #000000;
@@ -34,6 +38,12 @@ h3 {
     margin-top: 20px;
 }
 
+p {
+    margin: 20px 0 10px 0;
+    font-size: 1.2em;
+    font-family: var(--font-family-jogarnovamente);
+}
+
 .mensagem {
     font-size: 1.5em;
     margin-top: 40px;
@@ -56,8 +66,13 @@ h3 {
     margin-top: 20px;
     padding: 8px 15px;
     cursor: pointer;
+    font-family: var(--font-family-jogarnovamente);
 }
 
 .btn-jogar:hover {
     background-color: var(--hover-color)
+}
+
+.color-game-over {
+    font-family: var(--font-family-gameover);
 }
